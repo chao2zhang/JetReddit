@@ -8,10 +8,10 @@
       android:allowBackup="true"
       android:label="@string/app_name"
       android:supportsRtl="true"
-      android:name="com.chaozhang.com.chao2zhang.jetreddit.MainApplication"
+      android:name="com.chaozhang.jetreddit.MainApplication"
       android:theme="@style/AppTheme">
     <activity
-        android:name="com.chaozhang.com.chao2zhang.jetreddit.MainActivity"
+        android:name="com.chaozhang.jetreddit.MainActivity"
         android:label="@string/app_name">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
