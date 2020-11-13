@@ -6,7 +6,7 @@ buildscript {
     retrofit_version = "2.9.0"
     androidx_hilt_version = "1.0.0-alpha02"
     androidx_lifecycle_version = "2.2.0"
-    androidx_compose_version = "1.0.0-alpha03"
+    androidx_compose_version = "1.0.0-alpha07"
   }
   repositories {
     google()
@@ -14,7 +14,7 @@ buildscript {
     mavenCentral()
   }
   dependencies {
-    classpath "com.android.tools.build:gradle:4.2.0-alpha10"
+    classpath 'com.android.tools.build:gradle:4.2.0-alpha16'
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
 
