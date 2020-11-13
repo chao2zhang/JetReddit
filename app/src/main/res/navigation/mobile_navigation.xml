@@ -8,8 +8,7 @@
   <fragment
       android:id="@+id/navigation_home"
       android:name="com.chaozhang.jetreddit.ui.home.HomeFragment"
-      android:label="@string/title_home"
-      tools:layout="@layout/fragment_home" />
+      android:label="@string/title_home" />
 
   <fragment
       android:id="@+id/navigation_dashboard"
