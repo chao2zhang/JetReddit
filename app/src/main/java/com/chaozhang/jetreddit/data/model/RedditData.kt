@@ -14,6 +14,7 @@ class Reddit(
     val data: RedditData
 )
 
+@Suppress("ConstructorParameterNaming")
 class RedditData(
     val author: String,
     val title: String,
