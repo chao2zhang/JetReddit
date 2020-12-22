@@ -83,14 +83,14 @@ dependencies {
   implementation "androidx.compose.runtime:runtime:$androidx_compose_version"
   implementation "androidx.compose.runtime:runtime-livedata:$androidx_compose_version"
   implementation "androidx.compose.ui:ui:$androidx_compose_version"
-  implementation "androidx.ui:ui-tooling:$androidx_compose_version"
+  implementation "androidx.compose.ui:ui-tooling:$androidx_compose_version"
 
   // Networking
   implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
   implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
 
   // Image
-  implementation "dev.chrisbanes.accompanist:accompanist-coil:0.3.3.1"
+  implementation "dev.chrisbanes.accompanist:accompanist-coil:0.4.1"
 
   // Dagger
   implementation "com.google.dagger:hilt-android:$hilt_version"
