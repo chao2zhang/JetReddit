@@ -1,9 +1,8 @@
 plugins {
-  id "io.gitlab.arturbosch.detekt" version "1.15.0-RC2"
+  id "io.gitlab.arturbosch.detekt" version "1.15.0"
 }
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
 
