@@ -12,7 +12,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyColumnFor
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -55,10 +55,12 @@ class HomeFragment : Fragment() {
 @Composable
 fun RedditListing(viewModel: HomeViewModel) {
   val redditListings: RedditListing? by viewModel.reddits.observeAsState()
-
-  redditListings?.data?.children?.let { reddits ->
-    LazyColumnFor(items = reddits) {
-      RedditRow(reddit = it)
+  val reddits = redditListings?.data?.children
+  if (reddits != null) {
+    LazyColumn {
+      items(reddits) {
+        RedditRow(reddit = it)
+      }
     }
   }
 }
