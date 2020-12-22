@@ -38,7 +38,6 @@ android {
 
   kotlinOptions {
     jvmTarget = '1.8'
-    allWarningsAsErrors = true
   }
 
   buildFeatures {
@@ -53,8 +52,6 @@ android {
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
   kotlinOptions {
-    // Treat all Kotlin warnings as errors
-    allWarningsAsErrors = true
     freeCompilerArgs += '-Xopt-in=kotlin.RequiresOptIn'
     // Enable experimental coroutines APIs, including Flow
     freeCompilerArgs += '-Xopt-in=kotlin.Experimental'
@@ -69,7 +66,6 @@ detekt {
   autoCorrect = true
   failFast = true
   buildUponDefaultConfig = true
-  config = files("$projectDir/config/detekt.yml")
   reports {
     html.enabled = true
     xml.enabled = true
