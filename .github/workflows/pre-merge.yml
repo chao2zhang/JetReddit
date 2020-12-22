@@ -21,3 +21,7 @@ jobs:
 
       - name: Build with gradle
         run: ./gradlew build
+
+      - uses: github/codeql-action/upload-sarif@v1
+          with:
+            sarif_file: app/build/reports/detekt/detekt.sarif
