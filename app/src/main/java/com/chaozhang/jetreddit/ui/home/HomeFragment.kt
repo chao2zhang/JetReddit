@@ -23,14 +23,14 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.chaozhang.jetreddit.data.model.Reddit
 import com.chaozhang.jetreddit.data.model.RedditListing
+import com.google.accompanist.coil.CoilImage
 import dagger.hilt.android.AndroidEntryPoint
-import dev.chrisbanes.accompanist.coil.CoilImage
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -41,7 +41,7 @@ class HomeFragment : Fragment() {
     inflater: LayoutInflater,
     container: ViewGroup?,
     savedInstanceState: Bundle?
-  ): View? {
+  ): View {
     return ComposeView(requireContext()).apply {
       setContent {
         MaterialTheme {
@@ -58,9 +58,12 @@ fun RedditListing(viewModel: HomeViewModel) {
   val reddits = redditListings?.data?.children
   if (reddits != null) {
     LazyColumn {
-      items(reddits) {
-        RedditRow(reddit = it)
-      }
+      items(
+        count = reddits.size,
+        itemContent = { index ->
+          RedditRow(reddit = reddits[index])
+        }
+      )
     }
   }
 }
@@ -68,12 +71,21 @@ fun RedditListing(viewModel: HomeViewModel) {
 @Composable
 fun RedditRow(reddit: Reddit) {
   Column {
-    if (reddit.data.url != null) {
-      Surface(Modifier.heightIn(40.dp, 400.dp).fillMaxWidth()) {
+    if (reddit.data.url?.isNotBlank() == true) {
+      Surface(
+        Modifier
+          .heightIn(40.dp, 400.dp)
+          .fillMaxWidth()
+      ) {
         CoilImage(
           data = reddit.data.url,
+          contentDescription = null,
           loading = {
-            Box(Modifier.height(40.dp).fillMaxWidth()) {
+            Box(
+              Modifier
+                .height(40.dp)
+                .fillMaxWidth()
+            ) {
               CircularProgressIndicator(
                 Modifier
                   .height(20.dp)
@@ -88,7 +100,7 @@ fun RedditRow(reddit: Reddit) {
     Row {
       Text(
         text = reddit.data.title,
-        fontSize = TextUnit.Sp(20),
+        fontSize = 20.sp,
         modifier = Modifier.padding(8.dp)
       )
     }

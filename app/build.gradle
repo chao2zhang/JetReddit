@@ -45,8 +45,6 @@ android {
   }
 
   composeOptions {
-    kotlinCompilerVersion kotlin_version
-    kotlinCompilerExtensionVersion androidx_compose_version
   }
 }
 
@@ -81,10 +79,10 @@ dependencies {
 
   // Android
   implementation 'androidx.core:core-ktx:1.3.2'
-  implementation 'androidx.appcompat:appcompat:1.2.0'
+  implementation 'androidx.appcompat:appcompat:1.3.0-rc01'
   implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-  implementation 'androidx.navigation:navigation-fragment-ktx:2.3.1'
-  implementation 'androidx.navigation:navigation-ui-ktx:2.3.1'
+  implementation 'androidx.navigation:navigation-fragment-ktx:2.3.4'
+  implementation 'androidx.navigation:navigation-ui-ktx:2.3.4'
   implementation "androidx.lifecycle:lifecycle-extensions:$androidx_lifecycle_version"
   implementation "androidx.lifecycle:lifecycle-livedata-ktx:$androidx_lifecycle_version"
   implementation 'com.google.android.material:material:1.2.1'
@@ -102,13 +100,11 @@ dependencies {
   implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
 
   // Image
-  implementation "dev.chrisbanes.accompanist:accompanist-coil:0.4.1"
+  implementation "com.google.accompanist:accompanist-coil:0.7.0"
 
   // Dagger
   implementation "com.google.dagger:hilt-android:$hilt_version"
-  kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
-  implementation "androidx.hilt:hilt-lifecycle-viewmodel:$androidx_hilt_version"
-  kapt "androidx.hilt:hilt-compiler:$androidx_hilt_version"
+  kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
   // Test
   testImplementation 'junit:junit:4.13'
