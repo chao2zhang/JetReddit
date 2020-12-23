@@ -70,11 +70,11 @@ fun RedditListing(viewModel: HomeViewModel) {
 fun RedditRow(reddit: Reddit) {
   Column {
     if (reddit.data.url != null) {
-      Surface(Modifier.heightIn(40.dp, 400.dp).fillMaxWidth()) {
+      Surface(Modifier.heightIn(32.dp, 400.dp).fillMaxWidth()) {
         CoilImage(
           data = reddit.data.url,
           loading = {
-            Box(Modifier.height(40.dp).fillMaxWidth()) {
+            Box(Modifier.height(32.dp).fillMaxWidth()) {
               CircularProgressIndicator(
                 Modifier
                   .height(20.dp)
@@ -97,12 +97,12 @@ fun RedditRow(reddit: Reddit) {
       Text(
         text = "@${reddit.data.author}",
         color = MaterialTheme.colors.secondary,
-        modifier = Modifier.padding(8.dp)
+        modifier = Modifier.padding(4.dp)
       )
       Text(
         text = "${reddit.data.num_comments} comment",
         color = MaterialTheme.colors.primary,
-        modifier = Modifier.padding(8.dp)
+        modifier = Modifier.padding(4.dp)
       )
     }
   }
