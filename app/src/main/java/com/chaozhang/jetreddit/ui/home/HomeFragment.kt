@@ -65,6 +65,7 @@ fun RedditListing(viewModel: HomeViewModel) {
   }
 }
 
+
 @Composable
 fun RedditRow(reddit: Reddit) {
   Column {
