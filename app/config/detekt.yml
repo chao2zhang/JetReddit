@@ -1,3 +1,2 @@
-style:
-  MagicNumber:
-    active: false
+build:
+  maxIssues: 8645
