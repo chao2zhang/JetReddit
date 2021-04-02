@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.chaozhang.jetreddit2.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
