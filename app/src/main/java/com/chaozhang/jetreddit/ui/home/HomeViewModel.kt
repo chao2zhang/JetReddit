@@ -14,6 +14,7 @@ class HomeViewModel @Inject constructor(
   private val redditRepository: RedditRepository
 ) : ViewModel() {
 
-  val reddits: LiveData<RedditListing>
-    get() = redditRepository.topReddits.asLiveData(context = Dispatchers.IO)
+  val reddits: LiveData<RedditListing> = redditRepository
+    .topReddits
+    .asLiveData(context = Dispatchers.IO)
 }
