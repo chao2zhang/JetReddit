@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -15,7 +16,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -29,7 +29,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.chaozhang.jetreddit.data.model.Reddit
 import com.chaozhang.jetreddit.data.model.RedditListing
-import com.google.accompanist.coil.CoilImage
+import com.google.accompanist.coil.rememberCoilPainter
+import com.google.accompanist.imageloading.ImageLoadState
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -72,29 +73,30 @@ fun RedditListing(viewModel: HomeViewModel) {
 fun RedditRow(reddit: Reddit) {
   Column {
     if (reddit.data.url?.isNotBlank() == true) {
-      Surface(
-        Modifier
-          .heightIn(40.dp, 400.dp)
-          .fillMaxWidth()
-      ) {
-        CoilImage(
-          data = reddit.data.url,
+      val painter = rememberCoilPainter(request = reddit.data.url, fadeIn = true)
+      when (painter.loadState) {
+        is ImageLoadState.Success -> Image(
+          painter = painter,
           contentDescription = null,
-          loading = {
-            Box(
-              Modifier
-                .height(40.dp)
-                .fillMaxWidth()
-            ) {
-              CircularProgressIndicator(
-                Modifier
-                  .height(20.dp)
-                  .width(20.dp)
-                  .align(Alignment.Center)
-              )
-            }
-          }
+          modifier = Modifier
+            .heightIn(40.dp, 400.dp)
+            .fillMaxWidth()
         )
+        is ImageLoadState.Loading ->
+          Box(
+            Modifier
+              .height(40.dp)
+              .fillMaxWidth()
+          ) {
+            CircularProgressIndicator(
+              Modifier
+                .height(20.dp)
+                .width(20.dp)
+                .align(Alignment.Center)
+            )
+          }
+        else -> {
+        }
       }
     }
     Row {
