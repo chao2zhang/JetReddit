@@ -25,12 +25,10 @@ accompanist-coil = "com.google.accompanist:accompanist-coil:0.10.0"
 
 androidx-core = "androidx.core:core-ktx:1.5.0"
 androidx-appcompat = "androidx.appcompat:appcompat:1.4.0-alpha02"
-androidx-constraintlayout = "androidx.constraintlayout:constraintlayout:2.0.4"
 androidx-navigationFragmentKtx = "androidx.navigation:navigation-fragment-ktx:2.3.5"
 androidx-navigationUiKtx = "androidx.navigation:navigation-ui-ktx:2.3.5"
 androidx-lifecycleExtensions = { module = "androidx.lifecycle:lifecycle-extensions", version.ref = "lifecycle" }
 androidx-lifecycleKtx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycle" }
-material = "com.google.android.material:material:1.3.0"
 androidx-coreTesting = "androidx.arch.core:core-testing:2.1.0"
 androidx-testExt = "androidx.test.ext:junit:1.1.2"
 androidx-espresso = "androidx.test.espresso:espresso-core:3.3.0"

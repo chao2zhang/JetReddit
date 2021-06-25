@@ -10,4 +10,14 @@ interface RedditService {
     suspend fun top(
         @Query("limit") limit: Int = 10
     ): RedditListing
+
+    @GET("/hot.json")
+    suspend fun hot(
+        @Query("limit") limit: Int = 10
+    ): RedditListing
+
+    @GET("/best.json")
+    suspend fun best(
+        @Query("limit") limit: Int = 10
+    ): RedditListing
 }

@@ -20,6 +20,8 @@ class RedditData(
     val title: String,
     val num_comments: Int,
     val created: Long,
-    val thumbnail: String,
+    val thumbnail: String? = null,
+    val thumbnail_height: Int? = null,
+    val thumbnail_width: Int? = null,
     val url: String?
 )
