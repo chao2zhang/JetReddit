@@ -4,10 +4,10 @@ coroutine = "1.5.0"
 hilt = "2.37"
 retrofit = "2.9.0"
 lifecycle = "2.2.0"
-compose = "1.0.0-beta07"
+compose = "1.0.0"
 
 [libraries]
-android-plugin = "com.android.tools.build:gradle:7.0.0-beta02"
+android-plugin = "com.android.tools.build:gradle:7.0.1"
 kotlin-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 hilt-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt" }
 
