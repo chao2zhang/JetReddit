@@ -11,6 +11,6 @@
 
     <fragment
         android:id="@+id/destination_hot"
-        android:name="com.chaozhang.jetreddit.ui.home.HomeFragment"
+        android:name="com.chaozhang.jetreddit.ui.hot.HotFragment"
         android:label="@string/title_hot" />
 </navigation>

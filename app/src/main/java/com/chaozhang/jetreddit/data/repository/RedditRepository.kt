@@ -11,4 +11,6 @@ class RedditRepository @Inject constructor(private val redditService: RedditServ
     val topReddits: Flow<RedditListing> = flow {
         emit(redditService.top())
     }
+
+    suspend fun hotReddits(): RedditListing = redditService.hot()
 }
