@@ -1,13 +1,13 @@
 [versions]
 kotlin = "1.4.32"
 coroutine = "1.5.0"
-hilt = "2.37"
+hilt = "2.40.4"
 retrofit = "2.9.0"
-lifecycle = "2.2.0"
-compose = "1.0.0"
+lifecycle = "2.4.0"
+compose = "1.0.5"
 
 [libraries]
-android-plugin = "com.android.tools.build:gradle:7.0.1"
+android-plugin = "com.android.tools.build:gradle:7.0.3"
 kotlin-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 hilt-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt" }
 
@@ -23,12 +23,12 @@ compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
 compose-uiTooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 accompanist-coil = "com.google.accompanist:accompanist-coil:0.15.0"
 
-androidx-core = "androidx.core:core-ktx:1.5.0"
-androidx-appcompat = "androidx.appcompat:appcompat:1.4.0-alpha02"
+androidx-core = "androidx.core:core-ktx:1.7.0"
+androidx-appcompat = "androidx.appcompat:appcompat:1.4.0"
 androidx-navigationFragmentKtx = "androidx.navigation:navigation-fragment-ktx:2.3.5"
 androidx-navigationUiKtx = "androidx.navigation:navigation-ui-ktx:2.3.5"
-androidx-lifecycleExtensions = { module = "androidx.lifecycle:lifecycle-extensions", version.ref = "lifecycle" }
-androidx-lifecycleKtx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycle" }
+androidx-viewModelKtx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidx-liveDataKtx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycle" }
 androidx-coreTesting = "androidx.arch.core:core-testing:2.1.0"
 androidx-testExt = "androidx.test.ext:junit:1.1.2"
 androidx-espresso = "androidx.test.espresso:espresso-core:3.3.0"

@@ -1,5 +1,5 @@
 plugins {
-  id "io.gitlab.arturbosch.detekt" version "1.17.1"
+  id "io.gitlab.arturbosch.detekt" version "1.19.0"
   id "com.android.application"
   id "kotlin-android"
   id "kotlin-kapt"
@@ -7,13 +7,13 @@ plugins {
 }
 
 android {
-  compileSdkVersion 30
+  compileSdkVersion 31
   buildToolsVersion "30.0.3"
 
   defaultConfig {
     applicationId "com.chao2zhang.jetreddit"
     minSdkVersion 26
-    targetSdkVersion 30
+    targetSdkVersion 31
     versionCode 1
     versionName "1.0"
 
@@ -77,8 +77,8 @@ dependencies {
   implementation libs.androidx.appcompat
   implementation libs.androidx.navigationFragmentKtx
   implementation libs.androidx.navigationUiKtx
-  implementation libs.androidx.lifecycleExtensions
-  implementation libs.androidx.lifecycleKtx
+  implementation libs.androidx.viewModelKtx
+  implementation libs.androidx.liveDataKtx
 
   // Compose
   implementation libs.bundles.compose
