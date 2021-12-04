@@ -1,5 +1,6 @@
 package com.chaozhang.jetreddit.ui.composeables
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -67,6 +68,7 @@ fun RedditRow(reddit: Reddit) {
                     .width(120.dp)
                     .height(120.dp))
         }
+        Log.w("Reddit", Thread.getAllStackTraces().keys.sortedBy { it.name }.joinToString("\n") { it.name })
         Column {
             Row {
                 Text(
@@ -92,4 +94,5 @@ fun RedditRow(reddit: Reddit) {
             }
         }
     }
+
 }
