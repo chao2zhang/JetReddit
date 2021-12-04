@@ -93,6 +93,9 @@ dependencies {
   implementation libs.hilt.android
   kapt libs.hilt.compiler
 
+  // WorkManager
+  implementation libs.androidx.work
+
   // Test
   testImplementation libs.junit
   testImplementation libs.androidx.coreTesting

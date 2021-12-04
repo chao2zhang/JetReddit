@@ -32,6 +32,7 @@ androidx-liveDataKtx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", v
 androidx-coreTesting = "androidx.arch.core:core-testing:2.1.0"
 androidx-testExt = "androidx.test.ext:junit:1.1.2"
 androidx-espresso = "androidx.test.espresso:espresso-core:3.3.0"
+androidx-work = "androidx.work:work-runtime-ktx:2.7.1"
 
 retrofit-core = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
