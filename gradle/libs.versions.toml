@@ -35,6 +35,7 @@ androidx-espresso = "androidx.test.espresso:espresso-core:3.3.0"
 
 retrofit-core = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
+okhttp = "com.squareup.okhttp3:okhttp:4.9.1"
 
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
@@ -52,5 +53,6 @@ compose = [
 ]
 retrofit = [
   "retrofit-core",
-  "retrofit-moshi"
+  "retrofit-moshi",
+  "okhttp"
 ]
