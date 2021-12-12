@@ -10,6 +10,8 @@ import androidx.work.WorkRequest
 import com.chaozhang.jetreddit.work.DummyWorker
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.asExecutor
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
