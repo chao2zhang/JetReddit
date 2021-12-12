@@ -22,10 +22,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.LiveData
+import coil.compose.ImagePainter
+import coil.compose.LocalImageLoader
+import coil.compose.rememberImagePainter
 import com.chaozhang.jetreddit.data.model.Reddit
 import com.chaozhang.jetreddit.data.model.RedditListing
-import com.google.accompanist.coil.rememberCoilPainter
-import com.google.accompanist.imageloading.ImageLoadState
 
 @Composable
 fun RedditListingUI(redditListings: LiveData<RedditListing>) {
@@ -48,38 +49,18 @@ fun RedditRow(reddit: Reddit) {
     Row {
         val thumbnail = reddit.data.thumbnail
         if (thumbnail != null) {
-            val painter = rememberCoilPainter(request = thumbnail, fadeIn = true)
-            val width = reddit.data.thumbnail_width
-            val height = reddit.data.thumbnail_height
-            val aspectRatioModifier = if (width != null && height != null) {
-                Modifier.aspectRatio(width.toFloat() / height)
-            } else {
-                Modifier
-            }
-            when (painter.loadState) {
-                is ImageLoadState.Success -> Image(
-                    painter = painter,
-                    contentDescription = null,
-                    modifier = Modifier
-                        .height(120.dp)
-                        .width(120.dp)
-                )
-                is ImageLoadState.Loading ->
-                    Box(
-                        Modifier
-                            .height(120.dp)
-                            .width(120.dp)
-                    ) {
-                        CircularProgressIndicator(
-                            Modifier
-                                .height(120.dp)
-                                .width(120.dp)
-                                .align(Alignment.Center)
-                        )
-                    }
-                else -> {
+            val painter = rememberImagePainter(
+                data = thumbnail,
+                imageLoader = LocalImageLoader.current,
+                builder = {
+                    placeholder(0)
                 }
-            }
+            )
+            Image(
+                painter = painter,
+                contentDescription = null,
+                modifier = Modifier.height(120.dp).width(120.dp)
+            )
         } else {
             Box(
                 Modifier

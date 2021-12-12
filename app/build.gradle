@@ -87,7 +87,7 @@ dependencies {
   implementation libs.bundles.retrofit
 
   // Image
-  implementation libs.accompanist.coil
+  implementation libs.coil.compose
 
   // Dagger
   implementation libs.hilt.android
